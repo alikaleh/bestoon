@@ -9,9 +9,13 @@ class Expense(models.Model):
     data = models.DateTimeField()
     amount = models.BigIntegerField()
     user = models.ForeignKey(User, on_delete= models.CASCADE)
+    def __str__(self):
+        return '{} ba hazine {} anjam shod.'.format(self.text, self.amount)
 
 class income(models.Model):
     text = models.CharField(max_length=255)
     date = models.DateTimeField()
     amount = models.BigIntegerField()
     user =models.ForeignKey(User, on_delete= models.CASCADE)
+    def __str__(self):
+        return '{} ba hazine {} anjam shod.'.format(self.text, self.amount)
